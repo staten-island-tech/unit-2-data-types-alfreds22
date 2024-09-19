@@ -1,5 +1,3 @@
-day_of_week = input("what day is it? ")
-if day_of_week == "Friday":
-    print("correct")
-else:
-    print("incorrect")
+num = int(input("Input a integer:\n"))
+if (num % 2) == 0: print ("The number is even")
+else: print ("The number is odd")
