@@ -1,24 +1,19 @@
-def calculate_tip(bill, service_quality):
-    # Define tip percentages
-    tip_percentages = {
-        'bad': 0.0,
-        'okay': 0.15,
-        'good': 0.20,
-        'great': 0.25
-    }
-
-    # Get the corresponding tip percentage
-    tip_percentage = tip_percentages.get(service_quality.lower(), 0.0)  # Default to 0% if quality is unknown
-
-    # Calculate the tip
-    tip = bill * tip_percentage
-    total_amount = bill + tip
-
-    return tip, total_amount
-
-# Example usage
-bill_amount = 100  # Example bill amount
-service = 'good'   # Example service quality
-tip, total = calculate_tip(bill_amount, service)
-
-print(f"Tip: ${tip:.2f}, Total Amount: ${total:.2f}")
+def calculate_tip():
+    bill_amount = float(input("Enter the total bill amount: $"))
+    service_quality = input("How was the service? (excellent, good, average, poor):")
+    if service_quality == "excellent":
+        tip_percentage = 0.20
+    elif service_quality == "good":
+        tip_percentage = 0.15
+    elif service_quality == "average":
+        tip_percentage = 0.10
+    elif service_quality == "poor":
+        tip_percentage = 0.05
+    else:
+        print("Invalid input for service quality. Please enter excellent, good, average, or poor.")
+        return
+    tip_amount = bill_amount * tip_percentage
+    total_amount = bill_amount + tip_amount
+    print(f"Tip amount: ${tip_amount:.2f}")
+    print(f"Total amount to pay: ${total_amount:.2f}")
+calculate_tip()
