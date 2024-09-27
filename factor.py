@@ -1,4 +1,4 @@
-def find_factors():
+def find_factors(num):
     if num <= 0:
         return "Please enter a positive integer."
     factors = []  
